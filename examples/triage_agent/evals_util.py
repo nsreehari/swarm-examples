@@ -1,4 +1,4 @@
-from openai import OpenAI
+from swarm.aoai_config import OpenAI, getGPTModel
 import instructor
 from pydantic import BaseModel
 from typing import Optional
@@ -13,7 +13,7 @@ class BoolEvalResult(BaseModel):
 
 def evaluate_with_llm_bool(instruction, data) -> BoolEvalResult:
     eval_result, _ = __client.chat.completions.create_with_completion(
-        model="gpt-4o",
+        model=getGPTModel(),
         messages=[
             {"role": "system", "content": instruction},
             {"role": "user", "content": data},

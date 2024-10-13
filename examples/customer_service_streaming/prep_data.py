@@ -1,10 +1,10 @@
 import os
 import json
-from openai import OpenAI
+from swarm.aoai_config import OpenAI, getGPTModel, getEmbeddingModel
 
 client = OpenAI()
-GPT_MODEL = 'gpt-4'
-EMBEDDING_MODEL = "text-embedding-3-large"
+GPT_MODEL = getGPTModel()
+EMBEDDING_MODEL = getEmbeddingModel()
 
 article_list = os.listdir('data')
 

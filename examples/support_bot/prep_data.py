@@ -3,25 +3,12 @@ import os
 
 import pandas as pd
 import qdrant_client
-from openai import OpenAI
+from swarm.aoai_config import OpenAI, getGPTModel, getEmbeddingModel
 from qdrant_client.http import models as rest
 
 client = OpenAI()
-GPT_MODEL = "gpt-4o"
-EMBEDDING_MODEL = "text-embedding-3-large"
-
-article_list = os.listdir("data")
-
-articles = []
-
-for x in article_list:
-    article_path = "data/" + x
-
-    # Opening JSON file
-    f = open(article_path)
-
-    # returns JSON object as
-    # a dictionary
+GPT_MODEL = getGPTModel()
+EMBEDDING_MODEL = getEmbeddingModel()
     data = json.load(f)
 
     articles.append(data)

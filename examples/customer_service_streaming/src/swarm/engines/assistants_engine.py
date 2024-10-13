@@ -6,7 +6,7 @@ from configs.prompts import TRIAGE_SYSTEM_PROMPT, TRIAGE_MESSAGE_PROMPT, EVALUAT
 import time
 from src.swarm.assistants import Assistant
 from src.tasks.task import EvaluationTask
-from openai import OpenAI
+from swarm.aoai_config import OpenAI
 import importlib
 
 

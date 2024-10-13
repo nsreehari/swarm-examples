@@ -5,7 +5,7 @@ from collections import defaultdict
 from typing import List, Callable, Union
 
 # Package/library imports
-from openai import OpenAI
+from .aoai_config import OpenAI
 
 
 # Local imports

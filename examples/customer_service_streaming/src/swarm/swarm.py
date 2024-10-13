@@ -1,5 +1,5 @@
 import json
-from openai import OpenAI
+from swarm.aoai_config import OpenAI
 from src.tasks.task import Task, EvaluationTask
 from src.swarm.engines.assistants_engine import AssistantsEngine
 from src.swarm.engines.local_engine import LocalEngine

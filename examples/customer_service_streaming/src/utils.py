@@ -1,6 +1,8 @@
+from swarm.aoai_config import getGPTModel
+
 def get_completion(client,
     messages: list[dict[str, str]],
-    model: str = "gpt-4-0125-preview",
+    model: str = getGPTModel(),
     max_tokens=2000,
     temperature=0.7,
     tools=None, 

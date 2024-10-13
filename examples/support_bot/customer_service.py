@@ -1,7 +1,7 @@
 import re
 
 import qdrant_client
-from openai import OpenAI
+from swarm.aoai_config import OpenAI, getGPTModel, getEmbeddingModel
 
 from swarm import Agent
 from swarm.repl import run_demo_loop
@@ -11,7 +11,7 @@ client = OpenAI()
 qdrant = qdrant_client.QdrantClient(host="localhost")
 
 # Set embedding model
-EMBEDDING_MODEL = "text-embedding-3-large"
+EMBEDDING_MODEL = getEmbeddingModel()
 
 # Set qdrant collection
 collection_name = "help_center"

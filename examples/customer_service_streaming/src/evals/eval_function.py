@@ -3,7 +3,7 @@ from configs.prompts import EVAL_GROUNDTRUTH_PROMPT
 import json
 import re
 import ast
-from openai import OpenAI
+from swarm.aoai_config import OpenAI, getGPTModel
 
 class EvalFunction:
 
@@ -43,7 +43,7 @@ class EvalFunction:
     extract_name_prompt = "You will be provided with a sentence. Your goal is to extract the full names you see in the sentence. Return the names as an array of strings."
     response = self.plan['step'][-1]
     completion_result = self.client.chat.completions.create(
-       model="gpt-4-turbo-preview",
+       model=getGPTModel(),
        max_tokens=100,
        temperature=0,
        messages=[

@@ -1,4 +1,4 @@
-from openai import OpenAI
+from swarm.aoai_config import OpenAI, getEmbeddingModel
 from src.utils import get_completion
 import qdrant_client
 import re
@@ -9,7 +9,7 @@ qdrant = qdrant_client.QdrantClient(host='localhost')#, prefer_grpc=True)
 
 # # Set embedding model
 # # TODO: Add this to global config
-EMBEDDING_MODEL = 'text-embedding-3-large'
+EMBEDDING_MODEL = getEmbeddingModel()
 
 # # # Set qdrant collection
 collection_name = 'help_center'
