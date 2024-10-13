@@ -5,7 +5,8 @@ import database
 from swarm import Agent
 from swarm.agents import create_triage_agent
 from swarm.repl import run_demo_loop
-
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 def refund_item(user_id, item_id):
     """Initiate a refund based on the user ID and item ID.

@@ -23,6 +23,12 @@ or
 pip install git+https://github.com/openai/swarm.git
 ```
 
+or
+
+```shell
+pip install -e .
+```
+
 ## Usage
 
 ```python

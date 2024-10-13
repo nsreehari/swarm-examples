@@ -5,7 +5,8 @@ from src.tasks.task import Task
 from configs.general import test_root, test_file, engine_name, persist
 from src.validator import validate_all_tools, validate_all_assistants
 from src.arg_parser import parse_args
-
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 def main():
     args = parse_args()

@@ -5,6 +5,8 @@ from swarm.aoai_config import OpenAI, getEmbeddingModel
 
 from swarm import Agent
 from swarm.repl import run_demo_loop
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 # Initialize connections
 client = OpenAI()
